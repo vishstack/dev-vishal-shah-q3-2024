@@ -28,7 +28,7 @@
             "settings": {
               "background_color": "#00ccff",
               "text_color": "#000000",
-              "message": "Special offer {discount_value}% for {discount_code} subscribers!",
+              "message": "Special offer [discount_value]% for [discount_code] subscribers!",
               "utm_medium": "email",
               "discount_code": "NEWSLETTER10"
             }
