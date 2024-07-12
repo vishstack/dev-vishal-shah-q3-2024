@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     {% for block in reversed_blocks %}
       {% if block.type == 'banner' %}
 
-        {% assign discount_value = '15%' %}
+        {% assign discount_value = '15' %}
         {% assign discount_code = block.settings.discount_code %}
         {% assign discount_message = block.settings.message | replace: "[discount_code]", discount_code %}
         {% assign discount_message = discount_message | replace: "[discount_value]", discount_value %}
