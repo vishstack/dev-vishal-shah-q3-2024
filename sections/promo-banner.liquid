@@ -113,8 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //check already applied 
     for(k=0;k<banners.length;k++){
-      console.log(banners[k].discountId);
-      if (localStorage.getItem('promoBannerDismissed_'+banners[k].discountId) == 'true') {
+      if (localStorage.getItem('setBannerApplied_'+banners[k].discountId) == 'true') {
           console.log('test');
       } 
     }
