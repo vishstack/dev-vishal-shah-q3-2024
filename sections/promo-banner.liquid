@@ -116,14 +116,18 @@ document.addEventListener('DOMContentLoaded', function() {
       promoBanner.style.display = 'none';
     }
   }else{
-
     //check already applied 
     for(k=0;k<banners.length;k++){
       if (localStorage.getItem('setBannerApplied_'+banners[k].discountId) == 'true') {
-          console.log('test');
+          var mostRecentBanner = banners[k];
+          var promoBanner = document.createElement('div');
+          promoBanner.style.backgroundColor = mostRecentBanner.backgroundColor;
+          promoBanner.style.color = mostRecentBanner.textColor;
+          promoBanner.innerHTML = '<p>'+mostRecentBanner.message+'</p><button class="close-banner" style="color:'+mostRecentBanner.textColor+'">Close</button>';
+          promoBannersContainer.appendChild(promoBanner);
+          promoBanner.style.display = 'block';
       } 
     }
-    
   }
 });
 </script>
