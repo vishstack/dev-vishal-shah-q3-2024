@@ -4,9 +4,9 @@
   {% for block in section.blocks %}
     {% if block.type == 'banner' %}
       <div class="promo-banner" style="background-color: {{ block.settings.background_color }}; color: {{ block.settings.text_color }};">
-        <p>{{ block.settings.message }}</p>
-        <p>UTM Medium: {{ block.settings.utm_medium }}</p>
-        <p>Discount Code: {{ block.settings.discount_code }}</p>
+        <span>{{ block.settings.message }}</span>
+        <span>UTM Medium: {{ block.settings.utm_medium }}</span>
+        <span>Discount Code: {{ block.settings.discount_code }}</span>
       </div>
     {% endif %}
   {% endfor %}
