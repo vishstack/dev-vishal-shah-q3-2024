@@ -59,10 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     promoBanner.style.color = mostRecentBanner.textColor;
     promoBanner.innerHTML = '<p>'+mostRecentBanner.message+'</p><button class="close-banner" style="color:'+mostRecentBanner.textColor+'">Close</button>';
     promoBannersContainer.appendChild(promoBanner);
-
     promoBanner.style.display = 'block';
-
-    
  
     var closeButton = promoBanner.querySelector('.close-banner');
     closeButton.addEventListener('click', function() {
@@ -70,8 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.setItem('promoBannerDismissed_'+mostRecentBanner.discountCode, 'true');
     });
 
-    if (localStorage.getItem('promoBannerDismissed_'+mostRecentBanner.discountCode) !== 'true') {
-      promoBanner.style.display = 'block';
+    if (localStorage.getItem('promoBannerDismissed_'+mostRecentBanner.discountCode) == 'true') {
+      promoBanner.style.display = 'none';
     }
   }
 });
