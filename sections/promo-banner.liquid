@@ -103,6 +103,8 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.setItem('promoBannerDismissed_'+mostRecentBanner.discountId, 'true');
     });
 
+    localStorage.setItem('setBannerApplied_'+mostRecentBanner.discountId, 'true');
+    
     if (localStorage.getItem('promoBannerDismissed_'+mostRecentBanner.discountId) == 'true') {
       promoBanner.style.display = 'none';
     }else if (localStorage.getItem('setBannerApplied_'+mostRecentBanner.discountId) == 'true') {
