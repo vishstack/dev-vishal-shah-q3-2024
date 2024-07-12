@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for(k=0;k<banners.length;k++){
       console.log(banners[k]);
       if (localStorage.getItem('promoBannerDismissed_'+banners[k].discountId) == 'true') {
-        promoBanner.style.display = 'block';
+          console.log('test');
       } 
     }
     
