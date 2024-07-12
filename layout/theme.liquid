@@ -11,10 +11,12 @@
 
     <meta name="description" content="">
 
+    {% comment %}
     {%- liquid
       render 'vite-tag' with 'main.css'
       render 'vite-tag' with 'main.js'
     -%}
+    {% endcomment %}
 
     {{ content_for_header }}
   </head>
