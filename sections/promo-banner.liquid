@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             message: '{{ discount_message }}',
             utmMedium: '{{ block.settings.utm_medium }}',
             discountCode: '{{ block.settings.discount_code }}',
-            createdAt: '2024-07-11T10:00:00Z',
+            createdAt: banner_counter,
           },
       {% endif %}
       {% assign banner_counter = banner_counter | plus: 1 %}
