@@ -1,5 +1,6 @@
 #promo-banners{
   display:flex;
+  width:100%;
 }
 #promo-banners p {
   top: 0;
