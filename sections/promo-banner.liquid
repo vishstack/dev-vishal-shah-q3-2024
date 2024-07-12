@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {% assign discount_value = '15%' %}
         {% assign discount_code = block.settings.discount_code %}
         {% assign discount_message = block.settings.message | replace: "[discount_code]", discount_code %}
+        {% assign discount_message = discount_message | replace: "[discount_value]", discount_value %}
           {
             backgroundColor: '{{ block.settings.background_color }}',
             textColor: '{{ block.settings.text_color }}',
@@ -64,10 +65,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var closeButton = promoBanner.querySelector('.close-banner');
     closeButton.addEventListener('click', function() {
       promoBanner.style.display = 'none';
-      localStorage.setItem('promoBannerDismissed_'+mostRecentBanner.discountCode, 'true');
+      localStorage.setItem('promoBannerDismissed_'+mostRecentBanner.discountId, 'true');
     });
 
-    if (localStorage.getItem('promoBannerDismissed_'+mostRecentBanner.discountCode) == 'true') {
+    if (localStorage.getItem('promoBannerDismissed_'+mostRecentBanner.discountId) == 'true') {
       promoBanner.style.display = 'none';
     }
   }
