@@ -4,15 +4,6 @@
 </div>
 
 
-{% assign total_discount = 0 %}
-
-{% for item in cart.items %}
-  {% for discount in item.discount_allocations %}
-    {% assign total_discount = total_discount | plus: discount.amount %}
-  {% endfor %}
-{% endfor %}
-
-Total Discount Applied: {{ total_discount | money }}
 
 
 {% assign reversed_blocks = section.blocks | reverse %}
