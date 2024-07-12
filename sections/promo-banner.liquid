@@ -9,7 +9,7 @@
       {% assign discount_value = '15%' %}
       {% assign discount_code = block.settings.discount_code %}
       <div class="promo-banner" style="background-color: {{ block.settings.background_color }}; color: {{ block.settings.text_color }};">
-        <p>{{ block.settings.message | replace: "my", "your" }} </p>
+        <p>{{ block.settings.message | replace: "my", discount_code }} </p>
         <button class="close-banner">Close</button>
       </div>
     {% endif %}
