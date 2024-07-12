@@ -112,7 +112,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }else{
 
     //check already applied 
-    console.log('banner count:'+banners.length);
+    for(k=0;k<banners.length;k++){
+      if (localStorage.getItem('promoBannerDismissed_'+banners[k].discountId) == 'true') {
+        promoBanner.style.display = 'block';
+      } 
+    }
     
   }
 });
