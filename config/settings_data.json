@@ -32,11 +32,22 @@
               "utm_medium": "email",
               "discount_code": "NEWSLETTER10"
             }
+          },
+          "banner_T7LyHd": {
+            "type": "banner",
+            "settings": {
+              "background_color": "#6c0404",
+              "text_color": "#f9f9f9",
+              "message": "Your {discount_value}% off discount code {discount_code} will auto-apply at checkout.",
+              "utm_medium": "facebook",
+              "discount_code": "WELCOME15"
+            }
           }
         },
         "block_order": [
           "banner_MzcLWP",
-          "banner_3agb66"
+          "banner_3agb66",
+          "banner_T7LyHd"
         ],
         "settings": {
         }
