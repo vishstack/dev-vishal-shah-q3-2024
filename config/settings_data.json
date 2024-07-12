@@ -22,10 +22,21 @@
               "utm_medium": "social",
               "discount_code": "WELCOME15"
             }
+          },
+          "banner_3agb66": {
+            "type": "banner",
+            "settings": {
+              "background_color": "#00ccff",
+              "text_color": "#000000",
+              "message": "Special offer {discount_value}% for {discount_code} subscribers!",
+              "utm_medium": "email",
+              "discount_code": "NEWSLETTER10"
+            }
           }
         },
         "block_order": [
-          "banner_MzcLWP"
+          "banner_MzcLWP",
+          "banner_3agb66"
         ],
         "settings": {
         }
