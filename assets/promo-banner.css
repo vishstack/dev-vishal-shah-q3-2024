@@ -1,19 +1,17 @@
-#promo-banners{
-  p {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    display: none;
-  }
-  button {
-    margin-left: 20px;
-    background: none;
-    border: none;
-    color: inherit;
-    cursor: pointer;
-  }
+#promo-banners p {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: none;
+}
+#promo-banners button {
+  margin-left: 20px;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
 }
