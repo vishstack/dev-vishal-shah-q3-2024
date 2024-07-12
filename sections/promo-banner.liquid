@@ -39,31 +39,34 @@ document.addEventListener('DOMContentLoaded', function() {
     var results = regex.exec(location.search);
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
   }
-
-
-  var currentUrl = window.location.href;
-  console.log('URL:'+currentUrl);
-  var path = window.location.pathname;
-
-  // https://promo-banner.myshopify.com/discount/WELCOME15
-  var discountSegment = '/discount/';
-  var discountIndex = path.indexOf(discountSegment);
-
-  if (discountIndex !== -1) {
-      // Extract the discount code and the rest of the URL after '/discount/'
-      var discountCode = path.substring(discountIndex + discountSegment.length);
-      var nextSlashIndex = discountCode.indexOf('/');
-      
-      if (nextSlashIndex !== -1) {
-          discountCode = discountCode.substring(0, nextSlashIndex);
-      }
-      
-      console.log('Discount Code:', discountCode);
-  } else {
-      console.log('No discount code found in the URL.');
-  }
   
+  function setCookie(cname, cvalue, exdays) {
+          var d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      var expires = "expires=" + d.toGMTString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+  function unsetCookie(cname) {
+      document.cookie = cname + '=; path=/; expires=' + new Date(0).toUTCString();
+  }
+  function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      return "";
+  }
 
+  console.log("Cookie discount code:"+getCookie("discount_code"));
+  
   var utmMedium = getUrlParameter('utm_medium');
   var discountCode = getUrlParameter('discount');
 
