@@ -2,13 +2,15 @@
 <div id="promo-banners">
   <!-- Banners will be injected here by JavaScript -->
 </div>
+
+{% assign reversed_blocks = section.blocks | reverse %}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var promoBannersContainer = document.getElementById('promo-banners');
   
   // Sample data, replace with data from schema
   var banners = [
-    {% for block in section.blocks %}
+    {% for block in reversed_blocks %}
       {% if block.type == 'banner' %}
         {% assign discount_value = '15%' %}
         {% assign discount_code = block.settings.discount_code %}
