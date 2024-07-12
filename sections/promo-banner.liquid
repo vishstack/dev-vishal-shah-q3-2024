@@ -126,6 +126,12 @@ document.addEventListener('DOMContentLoaded', function() {
           promoBanner.innerHTML = '<p>'+mostRecentBanner.message+'</p><button class="close-banner" style="color:'+mostRecentBanner.textColor+'">Close</button>';
           promoBannersContainer.appendChild(promoBanner);
           promoBanner.style.display = 'block';
+
+          var closeButton = promoBanner.querySelector('.close-banner');
+          closeButton.addEventListener('click', function() {
+            promoBanner.style.display = 'none';
+            localStorage.setItem('promoBannerDismissed_'+mostRecentBanner.discountId, 'true');
+          });
       } 
     }
   }
