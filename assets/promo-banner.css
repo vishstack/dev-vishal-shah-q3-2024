@@ -1,7 +1,7 @@
 #promo-banners div{
   border: 2px solid black; padding: 10px; width: 98.5%; display: flex; justify-content: space-between; align-items: center;
 }
-#promo-banners span {
+#promo-banners span, #promo-banners p {
   font-family: 'Comic Sans MS', sans-serif; font-size: 18px;
 }
 #promo-banners button {
@@ -11,7 +11,7 @@
 .promo-banners div{
   border: 2px solid black; padding: 10px; width: 98.5%; display: flex; justify-content: space-between; align-items: center;
 }
-.promo-banners span {
+.promo-banners span,.promo-banners p {
   font-family: 'Comic Sans MS', sans-serif; font-size: 18px;
 }
 .promo-banners button {
