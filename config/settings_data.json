@@ -13,16 +13,6 @@
       "promo-banner": {
         "type": "promo-banner",
         "blocks": {
-          "banner_MzcLWP": {
-            "type": "banner",
-            "settings": {
-              "background_color": "#ffcc00",
-              "text_color": "#000000",
-              "message": "Your {discount_value}% off discount code {discount_code} will auto-apply at checkout.",
-              "utm_medium": "social",
-              "discount_code": "WELCOME15"
-            }
-          },
           "banner_3agb66": {
             "type": "banner",
             "settings": {
@@ -32,11 +22,21 @@
               "utm_medium": "email",
               "discount_code": "NEWSLETTER10"
             }
+          },
+          "banner_MzcLWP": {
+            "type": "banner",
+            "settings": {
+              "background_color": "#ffcc00",
+              "text_color": "#000000",
+              "message": "Your {discount_value}% off discount code {discount_code} will auto-apply at checkout.",
+              "utm_medium": "social",
+              "discount_code": "WELCOME15"
+            }
           }
         },
         "block_order": [
-          "banner_MzcLWP",
-          "banner_3agb66"
+          "banner_3agb66",
+          "banner_MzcLWP"
         ],
         "settings": {
         }
