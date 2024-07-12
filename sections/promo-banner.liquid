@@ -8,6 +8,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   var promoBannersContainer = document.getElementById('promo-banners');
   var banners = [
+    {% assign banner_counter = 1 %}
     {% for block in reversed_blocks %}
       {% if block.type == 'banner' %}
         {% assign discount_value = '15%' %}
@@ -20,9 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
             utmMedium: '{{ block.settings.utm_medium }}',
             discountCode: '{{ block.settings.discount_code }}',
             createdAt: '2024-07-11T10:00:00Z',
-            
           },
       {% endif %}
+      {% assign banner_counter = banner_counter | plus: 1 %}
     {% endfor %}
   ];
 
