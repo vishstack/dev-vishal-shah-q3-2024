@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var promoBanner = document.createElement('div');
     promoBanner.style.backgroundColor = mostRecentBanner.backgroundColor;
     promoBanner.style.color = mostRecentBanner.textColor;
-    promoBanner.innerHTML = '<span>'+mostRecentBanner.message+'</span><button class="close-banner" style="color:{{ mostRecentBanner.textColor }}">Close</button>';
+    promoBanner.innerHTML = '<span>'+mostRecentBanner.message+'</span><button class="close-banner" style="color:'+mostRecentBanner.textColor+'">Close</button>';
     promoBannersContainer.appendChild(promoBanner);
 
     promoBanner.style.display = 'block';

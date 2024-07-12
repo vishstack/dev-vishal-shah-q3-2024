@@ -3,7 +3,17 @@
   <!-- Banners will be injected here by JavaScript -->
 </div>
 
-
+<div class="promo-banners1">
+  {% for block in section.blocks %}
+    {% if block.type == 'banner' %}
+      <div class="promo-banner" style="background-color: {{ block.settings.background_color }}; color: {{ block.settings.text_color }};">
+        <p>{{ block.settings.message }}</p>
+        <p>UTM Medium: {{ block.settings.utm_medium }}</p>
+        <p>Discount Code: {{ block.settings.discount_code }}</p>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
 
 
 <script src="{{ 'promo-banner.js' | asset_url }}" defer="defer"></script>
