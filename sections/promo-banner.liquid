@@ -1,7 +1,19 @@
 {{ 'promo-banner.css' | asset_url | stylesheet_tag }}
 <div id="promo-banners">
-  <!-- Banners will be injected here by JavaScript -->
+  <!-- Banners will be display by JavaScript -->
 </div>
+
+
+{% assign total_discount = 0 %}
+
+{% for item in cart.items %}
+  {% for discount in item.discount_allocations %}
+    {% assign total_discount = total_discount | plus: discount.amount %}
+  {% endfor %}
+{% endfor %}
+
+Total Discount Applied: {{ total_discount | money }}
+
 
 {% assign reversed_blocks = section.blocks | reverse %}
 <script>
