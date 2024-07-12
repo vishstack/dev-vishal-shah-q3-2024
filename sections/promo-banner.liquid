@@ -2,46 +2,27 @@
 <div id="promo-banners">
   <!-- Banners will be injected here by JavaScript -->
 </div>
-
-<div class="promo-banners">
-  {% for block in section.blocks %}
-    {% if block.type == 'banner' %}
-      {% assign discount_value = '15%' %}
-      {% assign discount_code = block.settings.discount_code %}
-      <div class="promo-banner" style="background-color: {{ block.settings.background_color }}; color: {{ block.settings.text_color }};">
-        <p>{{ block.settings.message | replace: "[discount_code]", discount_code }} </p>
-        <button class="close-banner" style="color: {{ block.settings.text_color }};">Close</button>
-      </div>
-    {% endif %}
-  {% endfor %}
-
-  {{ section.blocks }}
-</div>
-<script src="{{ 'promo-banner.js' | asset_url }}" defer="defer"></script>
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var promoBannersContainer = document.getElementById('promo-banners');
   
   // Sample data, replace with data from schema
   var banners = [
-    {
-      backgroundColor: '#ffcc00',
-      textColor: '#000',
-      message: 'Your 15% off discount code WELCOME15 will auto-apply at checkout.',
-      utmMedium: 'social',
-      discountCode: 'WELCOME15',
-      createdAt: '2024-07-11T10:00:00Z'
-    },
-    {
-      backgroundColor: '#00ccff',
-      textColor: '#fff',
-      message: 'Special offer for newsletter subscribers!',
-      utmMedium: 'newsletter',
-      discountCode: 'NEWSLETTER10',
-      createdAt: '2024-07-10T09:00:00Z'
-    }
-    // Add more banners as needed
+    {% for block in section.blocks %}
+      {% if block.type == 'banner' %}
+        {% assign discount_value = '15%' %}
+        {% assign discount_code = block.settings.discount_code %}
+        {% assign discount_message = block.settings.message | replace: "[discount_code]", discount_code %}}
+          {
+            backgroundColor: block.settings.background_color,
+            textColor: block.settings.text_color,
+            message: discount_message,
+            utmMedium: block.settings.utm_medium,
+            discountCode: block.settings.discount_code,
+            createdAt: '2024-07-11T10:00:00Z'
+          },
+      {% endif %}
+    {% endfor %}
   ];
 
   function getUrlParameter(name) {
