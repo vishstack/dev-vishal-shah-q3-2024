@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
         {% assign discount_code = block.settings.discount_code %}
         {% assign discount_message = block.settings.message | replace: "[discount_code]", discount_code %}
           {
-            backgroundColor: {{ block.settings.background_color }},
-            textColor: {{ block.settings.text_color }},
-            message: {{ discount_message }},
-            utmMedium: {{ block.settings.utm_medium }},
-            discountCode: {{ block.settings.discount_code }},
+            backgroundColor: '{{ block.settings.background_color }}',
+            textColor: '{{ block.settings.text_color }}',
+            message: '{{ discount_message }}',
+            utmMedium: '{{ block.settings.utm_medium }}',
+            discountCode: '{{ block.settings.discount_code }}',
             createdAt: '2024-07-11T10:00:00Z'
           },
       {% endif %}
