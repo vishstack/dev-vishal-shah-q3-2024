@@ -107,8 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (localStorage.getItem('promoBannerDismissed_'+mostRecentBanner.discountId) == 'true') {
       promoBanner.style.display = 'none';
-    }else if (localStorage.getItem('setBannerApplied_'+mostRecentBanner.discountId) == 'true') {
-      promoBanner.style.display = 'block';
     }
   }
 });
