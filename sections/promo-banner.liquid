@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             utmMedium: '{{ block.settings.utm_medium }}',
             discountCode: '{{ block.settings.discount_code }}',
             createdAt: formattedDateTime,
+            discountId: {{ banner_counter }}
           },
       {% endif %}
       {% assign banner_counter = banner_counter | plus: 1 %}
