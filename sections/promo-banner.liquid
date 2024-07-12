@@ -1,15 +1,10 @@
 {{ 'promo-banner.css' | asset_url | stylesheet_tag }}
-
-<div class="promo-banners">
-  {% for block in section.blocks %}
-    {% if block.type == 'banner' %}
-      <div class="promo-banner" style="background-color: {{ block.settings.background_color }}; color: {{ block.settings.text_color }};">
-        <span>{{ block.settings.message }}</span>
-        <button class="close-banner">Close</button>
-      </div>
-    {% endif %}
-  {% endfor %}
+<div id="promo-banners">
+  <!-- Banners will be injected here by JavaScript -->
 </div>
+
+
+
 
 <script src="{{ 'promo-banner.js' | asset_url }}" defer="defer"></script>
 {% schema %}
