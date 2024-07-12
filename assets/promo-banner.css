@@ -1,19 +1,9 @@
 #promo-banners div{
-  display:flex;
-  width:100%;
+  border: 2px solid black; padding: 10px; width: fit-content; display: flex; justify-content: space-between; align-items: center;
 }
-#promo-banners p {
-  top: 0;
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-  background-color: var(--background-color);
-  color: var(--text-color);
+#promo-banners span {
+  font-family: 'Comic Sans MS', sans-serif; font-size: 18px;
 }
 #promo-banners button {
-  margin-left: 20px;
-  background: none;
-  border: none;
-  color: inherit;
-  cursor: pointer;
+  border: none; background: none; font-family: 'Comic Sans MS', sans-serif; font-size: 18px; cursor: pointer;
 }
