@@ -40,7 +40,7 @@
               "text_color": "#f9f9f9",
               "message": "New offer [discount_value]% off discount code [discount_code] will auto-apply at checkout.",
               "utm_medium": "facebook",
-              "discount_code": "WELCOME151"
+              "discount_code": "WELCOME15"
             }
           }
         },
