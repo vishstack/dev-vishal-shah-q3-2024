@@ -1,6 +1,45 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Promo Banners",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Banner",
+      "settings": [
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background color"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color"
+        },
+        {
+          "type": "text",
+          "id": "message",
+          "label": "Message"
+        },
+        {
+          "type": "text",
+          "id": "utm_medium",
+          "label": "UTM Medium"
+        },
+        {
+          "type": "text",
+          "id": "discount_code",
+          "label": "Discount code"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Banners"
+    }
+  ]
+}
 {% endschema %}
