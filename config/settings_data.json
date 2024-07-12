@@ -8,7 +8,33 @@
 * ------------------------------------------------------------
 */
 {
-  "current": "Default",
+  "current": {
+    "sections": {
+      "promo-banner": {
+        "type": "promo-banner",
+        "blocks": {
+          "banner_MzcLWP": {
+            "type": "banner",
+            "settings": {
+              "background_color": "",
+              "text_color": "",
+              "message": "",
+              "utm_medium": "",
+              "discount_code": ""
+            }
+          }
+        },
+        "block_order": [
+          "banner_MzcLWP"
+        ],
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
   "presets": {
     "Default": {
     }
