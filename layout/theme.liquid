@@ -17,15 +17,12 @@
       render 'vite-tag' with 'main.js'
     -%}
     {% endcomment %}
-
-    {{ 'promo-banner.css' | asset_url | stylesheet_tag }}
     
     {{ content_for_header }}
   </head>
 
   <body class="grid min-h-full grid-cols-[100%] grid-rows-[1fr]">
     {% section 'promo-banner' %}
-    
     <main>
       {{ content_for_layout }}
     </main>
