@@ -7,8 +7,6 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var promoBannersContainer = document.getElementById('promo-banners');
-  
-  // Sample data, replace with data from schema
   var banners = [
     {% for block in reversed_blocks %}
       {% if block.type == 'banner' %}
