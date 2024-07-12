@@ -16,11 +16,11 @@
           "banner_MzcLWP": {
             "type": "banner",
             "settings": {
-              "background_color": "",
-              "text_color": "",
-              "message": "",
-              "utm_medium": "",
-              "discount_code": ""
+              "background_color": "#ffcc00",
+              "text_color": "#000000",
+              "message": "Your {discount_value}% off discount code {discount_code} will auto-apply at checkout.",
+              "utm_medium": "social",
+              "discount_code": "WELCOME15"
             }
           }
         },
