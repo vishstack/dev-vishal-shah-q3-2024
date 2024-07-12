@@ -1,5 +1,7 @@
+#promo-banners{
+  display:flex;
+}
 #promo-banners p {
-  position: fixed;
   top: 0;
   width: 100%;
   text-align: center;
