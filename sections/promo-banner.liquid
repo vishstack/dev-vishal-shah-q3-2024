@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var matchedBanners = banners.filter(function(banner) {
     return banner.utmMedium === utmMedium || banner.discountCode === discountCode;
   });
-  console.log('banner count:'+matchedBanners.length);
+  
   
   if (matchedBanners.length > 0) {
     // Sort matched banners by creation date to show the most recent one
@@ -109,6 +109,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem('promoBannerDismissed_'+mostRecentBanner.discountId) == 'true') {
       promoBanner.style.display = 'none';
     }
+  }else{
+
+    //check already applied 
+    console.log('banner count:'+banners.length);
+    
   }
 });
 </script>
