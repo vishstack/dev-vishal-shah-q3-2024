@@ -40,6 +40,29 @@ document.addEventListener('DOMContentLoaded', function() {
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
   }
 
+
+  var currentUrl = window.location.href;
+  var path = window.location.pathname;
+
+  // https://promo-banner.myshopify.com/discount/WELCOME15
+  var discountSegment = '/discount/';
+  var discountIndex = path.indexOf(discountSegment);
+
+  if (discountIndex !== -1) {
+      // Extract the discount code and the rest of the URL after '/discount/'
+      var discountCode = path.substring(discountIndex + discountSegment.length);
+      var nextSlashIndex = discountCode.indexOf('/');
+      
+      if (nextSlashIndex !== -1) {
+          discountCode = discountCode.substring(0, nextSlashIndex);
+      }
+      
+      console.log('Discount Code:', discountCode);
+  } else {
+      console.log('No discount code found in the URL.');
+  }
+  
+
   var utmMedium = getUrlParameter('utm_medium');
   var discountCode = getUrlParameter('discount');
 
