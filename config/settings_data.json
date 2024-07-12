@@ -38,7 +38,7 @@
             "settings": {
               "background_color": "#6c0404",
               "text_color": "#f9f9f9",
-              "message": "New offer {discount_value}% off discount code {discount_code} will auto-apply at checkout.",
+              "message": "New offer [discount_value]% off discount code [discount_code] will auto-apply at checkout.",
               "utm_medium": "facebook",
               "discount_code": "WELCOME15"
             }
