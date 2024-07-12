@@ -1,3 +1,8 @@
+{{ 'promo-banner.css' | asset_url | stylesheet_tag }}
+<div id="promo-banners">
+  <!-- Banners will be injected here by JavaScript -->
+</div>
+<script src="{{ 'promo-banner.js' | asset_url }}" defer="defer"></script>
 {% schema %}
 {
   "name": "Promo Banners",
