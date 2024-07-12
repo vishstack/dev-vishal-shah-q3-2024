@@ -3,7 +3,12 @@
   <!-- Banners will be display by JavaScript -->
 </div>
 
-
+<!-- Check if there is a discount applied -->
+{% if cart.total_discount > 0 %}
+  <div class="cart-discount">
+    Discount Applied: {{ cart.total_discount | money }}
+  </div>
+{% endif %}
 
 
 {% assign reversed_blocks = section.blocks | reverse %}
