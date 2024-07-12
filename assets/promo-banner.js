@@ -52,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     promoBanner.style.display = 'block';
 
+    
+
     var closeButton = promoBanner.querySelector('.close-banner');
     closeButton.addEventListener('click', function() {
       promoBanner.style.display = 'none';
