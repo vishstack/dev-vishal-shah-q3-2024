@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
     {% assign banner_counter = 1 %}
     {% for block in reversed_blocks %}
       {% if block.type == 'banner' %}
+
+        var now = new Date();
+        var formattedDateTime = now.getFullYear() + '-' + (now.getMonth() + 1).toString().padStart(2, '0') + '-' + now.getDate().toString().padStart(2, '0') + ' ' + now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0') + ':' + now.getSeconds().toString().padStart(2, '0');
+        
         {% assign discount_value = '15%' %}
         {% assign discount_code = block.settings.discount_code %}
         {% assign discount_message = block.settings.message | replace: "[discount_code]", discount_code %}
@@ -20,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             message: '{{ discount_message }}',
             utmMedium: '{{ block.settings.utm_medium }}',
             discountCode: '{{ block.settings.discount_code }}',
-            createdAt: banner_counter,
+            createdAt: formattedDateTime,
           },
       {% endif %}
       {% assign banner_counter = banner_counter | plus: 1 %}
