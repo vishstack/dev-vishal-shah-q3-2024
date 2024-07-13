@@ -37,18 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       return "";
   }
-
-  my_param_cookie = getCookie('my_param');
-  if (my_param_cookie) {
-    console.log('This is testing: '+my_param_cookie);
-  }else{
-    console.log('This is not testing');
-
-    const referrerUrl = document.referrer;
-    console.log('Referrer URL:', referrerUrl);
-    
-    setCookie('my_param',{{ referrerUrl }});
-  }
   
   var now = new Date();
   var formattedDateTime = now.getFullYear() + '-' + (now.getMonth() + 1).toString().padStart(2, '0') + '-' + now.getDate().toString().padStart(2, '0') + ' ' + now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0') + ':' + now.getSeconds().toString().padStart(2, '0');
