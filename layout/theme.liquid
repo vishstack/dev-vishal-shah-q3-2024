@@ -1,6 +1,25 @@
 <!doctype html>
 <html class="h-full" lang="{{ request.locale.iso_code }}">
-  <script>
+
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    <title>{{ shop.name }}</title>
+    
+    <meta name="description" content="">
+
+    {% comment %}
+    {%- liquid
+      render 'vite-tag' with 'main.css'
+      render 'vite-tag' with 'main.js'
+    -%}
+    {% endcomment %}
+      <script>
     // some cookie functions
 function setCookie(name,value,days) {
     var expires = "";
@@ -57,25 +76,6 @@ if (my_param != null) {
     }
 }
   </script>
-  
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="">
-    <link rel="canonical" href="{{ canonical_url }}">
-
-    <title>{{ shop.name }}</title>
-    
-    <meta name="description" content="">
-
-    {% comment %}
-    {%- liquid
-      render 'vite-tag' with 'main.css'
-      render 'vite-tag' with 'main.js'
-    -%}
-    {% endcomment %}
-    
     {{ content_for_header }}
   </head>
 
