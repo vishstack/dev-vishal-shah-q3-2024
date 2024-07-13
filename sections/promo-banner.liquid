@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('This is testing: '+my_param_cookie);
   }else{
     console.log('This is not testing');
-    setCookie('my_param',);
+    setCookie('my_param','{{ request_path }}');
   }
   
   var now = new Date();
