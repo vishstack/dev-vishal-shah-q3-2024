@@ -4,9 +4,16 @@
 </div>
 
 <!-- Check if there is a discount applied -->
-{% for discount_application in cart.discount_applications %}
-   <div><p>{{ discount_application.title }}</p></div>
-{% endfor %}
+{% if discount %}
+  <div class="discount-banner">
+    <p>Discount applied: {{ discount.title }} - Save {{ discount.savings | money }}</p>
+  </div>
+{% else %}
+  <div class="discount-banner">
+    <p>No discount code applied.</p>
+  </div>
+{% endif %}
+
 
 
 {% assign reversed_blocks = section.blocks | reverse %}
