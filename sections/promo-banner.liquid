@@ -2,6 +2,9 @@
 <div id="promo-banners">
   <!-- Banners will be display by JavaScript -->
 </div>
+
+{{ request.path }}
+
 {% assign reversed_blocks = section.blocks | reverse %}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
