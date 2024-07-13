@@ -14,42 +14,14 @@
 {% assign reversed_blocks = section.blocks | reverse %}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  var now = new Date();
-  var formattedDateTime = now.getFullYear() + '-' + (now.getMonth() + 1).toString().padStart(2, '0') + '-' + now.getDate().toString().padStart(2, '0') + ' ' + now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0') + ':' + now.getSeconds().toString().padStart(2, '0');
-  
-  var promoBannersContainer = document.getElementById('promo-banners');
-  var banners = [
-    {% assign banner_counter = 1 %}
-    {% for block in reversed_blocks %}
-      {% if block.type == 'banner' %}
-
-        {% assign discount_value = '15%' %}
-        {% assign discount_code = block.settings.discount_code %}
-        {% assign discount_message = block.settings.message | replace: "[discount_code]", discount_code %}
-        {% assign discount_message = discount_message | replace: "[discount_value]", discount_value %}
-          {
-            backgroundColor: '{{ block.settings.background_color }}',
-            textColor: '{{ block.settings.text_color }}',
-            message: '{{ discount_message }}',
-            utmMedium: '{{ block.settings.utm_medium }}',
-            discountCode: '{{ block.settings.discount_code }}',
-            createdAt: formattedDateTime,
-            discountId: {{ banner_counter }}
-          },
-      {% endif %}
-      {% assign banner_counter = banner_counter | plus: 1 %}
-    {% endfor %}
-  ];
-
   function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
     var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
     var results = regex.exec(location.search);
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
   }
-  
   function setCookie(cname, cvalue, exdays) {
-          var d = new Date();
+      var d = new Date();
       d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
       var expires = "expires=" + d.toGMTString();
       document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
@@ -72,8 +44,32 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       return "";
   }
-
-  console.log("Cookie discount code:"+getCookie("discount_code"));
+  
+  var now = new Date();
+  var formattedDateTime = now.getFullYear() + '-' + (now.getMonth() + 1).toString().padStart(2, '0') + '-' + now.getDate().toString().padStart(2, '0') + ' ' + now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0') + ':' + now.getSeconds().toString().padStart(2, '0');
+  var promoBannersContainer = document.getElementById('promo-banners');
+  var banners = [
+    {% assign banner_counter = 1 %}
+    {% for block in reversed_blocks %}
+      {% if block.type == 'banner' %}
+        {% assign discount_value = '15%' %}
+        {% assign discount_code = block.settings.discount_code %}
+        {% assign discount_message = block.settings.message | replace: "[discount_code]", discount_code %}
+        {% assign discount_message = discount_message | replace: "[discount_value]", discount_value %}
+          {
+            backgroundColor: '{{ block.settings.background_color }}',
+            textColor: '{{ block.settings.text_color }}',
+            message: '{{ discount_message }}',
+            utmMedium: '{{ block.settings.utm_medium }}',
+            discountCode: '{{ block.settings.discount_code }}',
+            createdAt: formattedDateTime,
+            discountId: {{ banner_counter }}
+          },
+      {% endif %}
+      {% assign banner_counter = banner_counter | plus: 1 %}
+    {% endfor %}
+  ];
+  //console.log("Cookie discount code:"+getCookie("discount_code"));
   
   var utmMedium = getUrlParameter('utm_medium');
   var discountCode = getUrlParameter('discount');
@@ -94,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     var mostRecentBanner = matchedBanners[0];
-
     var promoBanner = document.createElement('div');
     promoBanner.style.backgroundColor = mostRecentBanner.backgroundColor;
     promoBanner.style.color = mostRecentBanner.textColor;
