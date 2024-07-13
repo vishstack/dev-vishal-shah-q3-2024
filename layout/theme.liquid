@@ -23,7 +23,7 @@
         }
         
         //get cookie
-        const url_string = window.location.href;
+        const url_string = '{{ request.path }}';
         const url_object = new URL(url_string);
         let my_param_cookie = getCookie('my_param');
         if (!my_param_cookie) {
