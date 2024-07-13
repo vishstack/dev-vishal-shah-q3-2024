@@ -2,20 +2,6 @@
 <div id="promo-banners">
   <!-- Banners will be display by JavaScript -->
 </div>
-
-<!-- Check if there is a discount applied -->
-{% if discount %}
-  <div class="discount-banner">
-    <p>Discount applied: {{ discount.title }} - Save {{ discount.savings | money }}</p>
-  </div>
-{% else %}
-  <div class="discount-banner">
-    <p>No discount code applied.</p>
-  </div>
-{% endif %}
-
-
-
 {% assign reversed_blocks = section.blocks | reverse %}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
