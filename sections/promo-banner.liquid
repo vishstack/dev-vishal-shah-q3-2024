@@ -3,8 +3,7 @@
   <!-- Banners will be display by JavaScript -->
 </div>
 
-{{ request.path }}
-
+{% assign request_path = request.path %}
 {% assign reversed_blocks = section.blocks | reverse %}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -44,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('This is testing: '+my_param_cookie);
   }else{
     console.log('This is not testing');
+    setCookie('my_param',);
   }
   
   var now = new Date();
