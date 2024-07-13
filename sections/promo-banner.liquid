@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const referrerUrl = document.referrer;
     console.log('Referrer URL:', referrerUrl);
     
-    setCookie('my_param','{{ referrerUrl }}');
+    setCookie('my_param',{{ referrerUrl }});
   }
   
   var now = new Date();
