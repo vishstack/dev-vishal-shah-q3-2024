@@ -18,7 +18,7 @@
             "settings": {
               "background_color": "#ffcc00",
               "text_color": "#000000",
-              "message": "Your [discount_value] off discount code [discount_code] will auto-apply at checkout.",
+              "message": "Your 15% off discount code [discount_code] will auto-apply at checkout.",
               "utm_medium": "social",
               "discount_code": "WELCOME15"
             }
