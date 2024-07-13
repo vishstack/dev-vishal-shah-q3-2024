@@ -19,6 +19,14 @@
     {% endcomment %}
     
     {{ content_for_header }}
+
+    
+    {%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+    {%- assign pageUrl = contentForQuerystring | split: '"pageurl":"' | last | split: '"' | first | split: '.myshopify.com' | last | replace: '\/', '/' | replace: '%20', ' ' | replace: '\u0026', '&' -%}
+    {% capture finalurl %}https://{{ pageUrl }}{% endcapture %}
+    {{ finalurl }}
+
+    
   </head>
 
   <body class="grid min-h-full grid-cols-[100%] grid-rows-[1fr]">
