@@ -43,7 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('This is testing: '+my_param_cookie);
   }else{
     console.log('This is not testing');
-    setCookie('my_param','{{ request_path }}');
+
+    const referrerUrl = document.referrer;
+    console.log('Referrer URL:', referrerUrl);
+    
+    setCookie('my_param','{{ referrerUrl }}');
   }
   
   var now = new Date();
