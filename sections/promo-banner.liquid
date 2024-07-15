@@ -123,12 +123,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     //If not matched discount code
-    var matchedBanners = banners.filter(function(banner) {
-      return banner.utmMedium === utmMedium || banner.discountCode === discountCode;
-    });
-    if (matchedBanners.length <= 0) {
-      var promoBanner = document.getElementById('promoBanner');
-      promoBanner.style.display = 'none';
+    if(discountCode!=""){
+      var matchedBanners = banners.filter(function(banner) {
+        return banner.discountCode === discountCode;
+      });
+      if (matchedBanners.length <= 0) {
+        var promoBanner = document.getElementById('promoBanner');
+        promoBanner.style.display = 'none';
+      }
+    }
+    //If not matched utm_medium
+    if(utmMedium!=""){
+      var matchedBanners = banners.filter(function(banner) {
+        return banner.utmMedium === utmMedium;
+      });
+      if (matchedBanners.length <= 0) {
+        var promoBanner = document.getElementById('promoBanner');
+        promoBanner.style.display = 'none';
+      }
     }
   }
 });
