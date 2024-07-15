@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
       queryString = params.join('&');
   
       // Return the new URL
-      return queryString ? `${baseUrl}?${queryString}` : baseUrl;
+      window.location = queryString ? `${baseUrl}?${queryString}` : baseUrl;
   }
   
  
