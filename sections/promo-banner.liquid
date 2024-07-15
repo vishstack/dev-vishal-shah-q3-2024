@@ -67,7 +67,12 @@ document.addEventListener('DOMContentLoaded', function() {
   var discountCode = getCookie('discount_code');
 
   var matchedBanners = banners.filter(function(banner) {
-    return banner.utmMedium === utmMedium || banner.discountCode === discountCode;
+    if(utmMedium!=""){
+      return banner.utmMedium === utmMedium 
+    } 
+    else{
+      return banner.discountCode === discountCode;
+    }
   });
   
   if (matchedBanners.length > 0) {
