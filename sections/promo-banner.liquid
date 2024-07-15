@@ -61,8 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
       window.location = queryString ? `${baseUrl}?${queryString}` : baseUrl;
   }
   
- 
-  
   var now = new Date();
   var formattedDateTime = now.getFullYear() + '-' + (now.getMonth() + 1).toString().padStart(2, '0') + '-' + now.getDate().toString().padStart(2, '0') + ' ' + now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0') + ':' + now.getSeconds().toString().padStart(2, '0');
   var promoBannersContainer = document.getElementById('promo-banners');
@@ -80,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             message: '{{ discount_message }}',
             utmMedium: '{{ block.settings.utm_medium }}',
             discountCode: '{{ block.settings.discount_code }}',
-            createdAt: now.getFullYear() + '-' + (now.getMonth() + 1).toString().padStart(2, '0') + '-' + now.getDate().toString().padStart(2, '0') + ' ' + now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0') + ':' + now.getSeconds().toString().padStart(banner_counter, '0'),
+            createdAt: now.getFullYear() + '-' + (now.getMonth() + 1).toString().padStart(2, '0') + '-' + now.getDate().toString().padStart(2, '0') + ' ' + now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0') + ':' + now.getSeconds().toString().padStart({{ banner_counter }}, '0'),
             discountId: {{ banner_counter }}
           },
       {% endif %}
