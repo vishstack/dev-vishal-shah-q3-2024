@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     closeButton.addEventListener('click', function() {
       promoBanner.style.display = 'none';
       localStorage.setItem('promoBannerDismissed_'+mostRecentBanner.discountId, 'true');
+      unsetCookie('discount_code');
     });
 
     localStorage.setItem('setBannerApplied_'+mostRecentBanner.discountId, 'true');
@@ -124,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
             promoBanner.style.display = 'none';
             localStorage.setItem('promoBannerDismissed_'+mostRecentBanner.discountId, 'true');
             localStorage.removeItem('setBannerApplied_'+mostRecentBanner.discountId);
+            unsetCookie('discount_code');
           });
       } 
     }
