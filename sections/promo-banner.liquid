@@ -35,6 +35,25 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       return "";
   }
+  function removeParameter(pname){
+    // Example URL
+    let url = new URL(window.location.href);
+    
+    // The parameter you want to remove
+    let paramToRemove = pname;
+    
+    // Use URLSearchParams to modify the query string
+    let params = new URLSearchParams(url.search);
+    
+    // Remove the specified parameter
+    params.delete(paramToRemove);
+    
+    // Update the URL with the new query string
+    url.search = params.toString();
+    
+    // The URL without the specified parameter
+    let newUrl = url.toString();
+  }
   
   var now = new Date();
   var formattedDateTime = now.getFullYear() + '-' + (now.getMonth() + 1).toString().padStart(2, '0') + '-' + now.getDate().toString().padStart(2, '0') + ' ' + now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0') + ':' + now.getSeconds().toString().padStart(2, '0');
@@ -73,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if(utmMedium!=""){
       if(banner.utmMedium === utmMedium){
         setCookie('utm_medium',utmMedium,1);
+        window.location = removeParameter('utm_medium');
         return banner.utmMedium === utmMedium;
       }
     } 
