@@ -92,7 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if(utmMedium!=""){
       if(banner.utmMedium === utmMedium){
         setCookie('utm_medium',utmMedium,1);
-        window.location = removeParameter('utm_medium');
+        var new1 = removeParameter('utm_medium');
+        console.log(new1);
         return banner.utmMedium === utmMedium;
       }
     } 
