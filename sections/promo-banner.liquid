@@ -35,25 +35,33 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       return "";
   }
-  function removeParameter(pname){
-    // Example URL
-    let url = new URL(window.location.href);
-    
-    // The parameter you want to remove
-    let paramToRemove = pname;
-    
-    // Use URLSearchParams to modify the query string
-    let params = new URLSearchParams(url.search);
-    
-    // Remove the specified parameter
-    params.delete(paramToRemove);
-    
-    // Update the URL with the new query string
-    url.search = params.toString();
-    
-    // The URL without the specified parameter
-    let newUrl = url.toString();
+  function removeURLParameter(url, parameter) {
+      // Split the URL into base and query parts
+      let urlParts = url.split('?');
+      
+      // If there are no query parameters, return the URL as is
+      if (urlParts.length === 1) {
+          return url;
+      }
+  
+      // Extract the base and query string
+      let baseUrl = urlParts[0];
+      let queryString = urlParts[1];
+  
+      // Split the query string into individual parameters
+      let params = queryString.split('&');
+  
+      // Filter out the parameter to remove
+      params = params.filter(param => !param.startsWith(`${parameter}=`));
+  
+      // Reconstruct the query string
+      queryString = params.join('&');
+  
+      // Return the new URL
+      return queryString ? `${baseUrl}?${queryString}` : baseUrl;
   }
+  
+ 
   
   var now = new Date();
   var formattedDateTime = now.getFullYear() + '-' + (now.getMonth() + 1).toString().padStart(2, '0') + '-' + now.getDate().toString().padStart(2, '0') + ' ' + now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0') + ':' + now.getSeconds().toString().padStart(2, '0');
@@ -92,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if(utmMedium!=""){
       if(banner.utmMedium === utmMedium){
         setCookie('utm_medium',utmMedium,1);
-        var new1 = removeParameter('utm_medium');
+        var new1 = removeURLParameter(window.location.href,'utm_medium');
         console.log(new1);
         return banner.utmMedium === utmMedium;
       }
