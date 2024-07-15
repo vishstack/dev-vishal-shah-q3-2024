@@ -1,7 +1,5 @@
 <!doctype html>
 <html class="h-full" lang="{{ request.locale.iso_code }}">
-
-  
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,18 +8,17 @@
     <link rel="canonical" href="{{ canonical_url }}">
 
     <title>{{ shop.name }}</title>
-    
+
     <meta name="description" content="">
 
-    {% comment %}
     {%- liquid
       render 'vite-tag' with 'main.css'
       render 'vite-tag' with 'main.js'
     -%}
-    {% endcomment %}
-    
+
     {{ content_for_header }}
   </head>
+
   <body class="grid min-h-full grid-cols-[100%] grid-rows-[1fr]">
     {% section 'promo-banner' %}
     <main>
