@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
       promoBanner.style.display = 'none';
       localStorage.setItem('promoBannerDismissed_'+mostRecentBanner.discountId, 'true');
       unsetCookie('discount_code');
+      unsetCookie('utm_medium');
     });
 
     localStorage.setItem('setBannerApplied_'+mostRecentBanner.discountId, 'true');
