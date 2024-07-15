@@ -63,6 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
   //console.log("Cookie discount code:"+getCookie("discount_code"));
   
   var utmMedium = getUrlParameter('utm_medium');
+  if(utmMedium==""){
+      utmMedium = getCookie('utm_medium');
+  }
   //var discountCode = getUrlParameter('discount');
   var discountCode = getCookie('discount_code');
 
