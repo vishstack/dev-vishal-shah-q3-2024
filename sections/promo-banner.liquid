@@ -129,7 +129,9 @@ document.addEventListener('DOMContentLoaded', function() {
           });
       } 
     }
-
+    
+  console.log('discount code:'+discountCode);
+    
     //If not matched discount code
     if(discountCode!=""){
       var matchedBanners = banners.filter(function(banner) {
