@@ -130,8 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
       } 
     }
     
-  console.log('discount code:'+discountCode);
-    
     //If not matched discount code
     if(discountCode!=""){
       var matchedBanners = banners.filter(function(banner) {
@@ -148,6 +146,11 @@ document.addEventListener('DOMContentLoaded', function() {
         return banner.utmMedium === utmMedium;
       });
       if (matchedBanners.length <= 0) {
+        var promoBanner = document.getElementById('promoBanner');
+        promoBanner.style.display = 'none';
+      }
+    }else{
+      if(discountCode==""){
         var promoBanner = document.getElementById('promoBanner');
         promoBanner.style.display = 'none';
       }
