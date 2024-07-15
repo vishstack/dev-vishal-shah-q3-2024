@@ -63,7 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
   //console.log("Cookie discount code:"+getCookie("discount_code"));
   
   var utmMedium = getUrlParameter('utm_medium');
-  var discountCode = getUrlParameter('discount');
+  //var discountCode = getUrlParameter('discount');
+  var discountCode = getUrlParameter('discount_code');
 
   var matchedBanners = banners.filter(function(banner) {
     return banner.utmMedium === utmMedium || banner.discountCode === discountCode;
