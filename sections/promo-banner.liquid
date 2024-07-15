@@ -100,16 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem('promoBannerDismissed_'+mostRecentBanner.discountId) == 'true') {
       promoBanner.style.display = 'none';
     }
-  }else{
-
-    var matchedBanners = banners.filter(function(banner) {
-        banner.discountCode === discountCode;
-    });
-    
-    if (matchedBanners.length <= 0 ) {
-        promoBanner.style.display = 'none';
-    }
-    
+  }else{    
     //check already applied 
     for(k=0;k<banners.length;k++){
       if (localStorage.getItem('setBannerApplied_'+banners[k].discountId) == 'true') {
